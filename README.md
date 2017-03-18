@@ -1,7 +1,5 @@
-(neo)mutt
+(neo)mutt mail config
 ====
-
-# Fergus' mail config 
 
 ## Installation
 
