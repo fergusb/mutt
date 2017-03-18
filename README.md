@@ -79,12 +79,13 @@ eval $(gpg-agent --daemon)
 
 ## Addressbook
 
-If you're using Gmail, install goobook
+If you're using Gmail, install goobook: https://gitlab.com/goobook/goobook
 ```
 pip install --user goobook
 ```
 
-For regular CardDAV, use pycarddav: https://github.com/geier/pycarddav
+For regular CardDAV, use pycarddav: https://github.com/geier/pycarddav  
+Note: requires Python2 and vobject < 0.9
 
 ```
 pip install --user pycarddav
