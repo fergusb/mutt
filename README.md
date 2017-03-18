@@ -12,9 +12,7 @@ vim foo
 
 Add the following to foo:
 ```
-set from="[gpg]"
-set imap_pass="[your_password]"
-set smtp_pass="[your_password]"
+set from="[email]"
 set imap_user="[passwd]"
 set imap_pass="[passwd]"
 alternates "[address|address]"  # optional
