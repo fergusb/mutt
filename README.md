@@ -1,4 +1,4 @@
-mutt
+(neo)mutt
 ====
 
 # Fergus' (neo)mutt config 
@@ -77,9 +77,17 @@ killall -q gpg-agent
 eval $(gpg-agent --daemon)
 ```
 
+## Addressbook
+
 If you're using Gmail, install goobook
 ```
 pip install --user goobook
+```
+
+For regular CardDAV, use pycarddav: https://github.com/geier/pycarddav
+
+```
+pip install --user pycarddav
 ```
 
 " vim:ft=mkd

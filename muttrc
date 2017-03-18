@@ -1,7 +1,7 @@
 # Fergus' mutt settings
-# Last Modified: 2017-03-18 11:40:24 CET
+# Last Modified: 2017-03-18 12:36:30 CET
 
-# defaults
+# set defaults
 set realname = "Fergus Bremner"
 set mbox_type = Maildir
 set imap_idle = yes
@@ -10,7 +10,7 @@ set mail_check = 120
 set imap_keepalive = 300
 set timeout = 30
 
-# accounts
+# set accounts
 folder-hook imaps://fergus@fastmail.fm@mail.messagingengine.com:993 "source ~/.mutt/accounts/fastmail.profile"
 folder-hook imaps://fergus.bremner@gmail.com@imap.gmail.com:993 "source ~/.mutt/accounts/gmail.profile"
 
