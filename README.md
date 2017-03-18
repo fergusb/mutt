@@ -4,13 +4,19 @@ mutt
 # Fergus' (neo)mutt config 
 
 ## Installation
+
+Instalation is 2-step:
+
+1. Run the installer
+2. Add encrypted account settings
+
+### Installer
 ```
 cd ~/.mutt
-vim foo
 ./install
 ```
 
-## Gmail
+### Gmail
 
 Encrypt the following settings...
 ```
@@ -20,7 +26,7 @@ set signature = "[filename]"    # optional
 set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
-## FastMail
+### FastMail
 
 Encrypt the following settings...
 ```
@@ -35,7 +41,7 @@ my_hdr X-PGP-Key: [asc]         # optional
 set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
-Thusly
+### Encription
 ```
 gpg -r [keyID] -e [filename]
 mv filename.gpg ~/.mutt/accounts/
