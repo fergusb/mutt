@@ -10,23 +10,36 @@ vim foo
 ./install
 ```
 
-Add the following to foo:
+## Gmail
+
+Encrypt the following settings...
+```
+set imap_user = "[email]"
+set imap_pass = "[passwd]"
+set signature = "[filename]"    # optional
+set pgp_sign_as=0xXXXXXXXX      # optional
+```
+
+## FastMail
+
+Encrypt the following settings...
 ```
 set from="[email]"
-set imap_user="[passwd]"
+set imap_user="[email]"
 set imap_pass="[passwd]"
 alternates "[address|address]"  # optional
-set signature=[txt_file]        # optional
+set signature=[filename]        # optional
 unmy_hdr *                      # optional
 my_hdr X-URL: [your_domain]     # optional
 my_hdr X-PGP-Key: [asc]         # optional
 set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
+Thusly
 ```
-gpg -r [keyID] -e passwd
-shred passwd
-mv passwd.gpg accounts/
+gpg -r [keyID] -e [filename]
+mv filename.gpg ~/.mutt/accounts/
+shred [filename]
 ```
 
 If gpg-agent misbehaves try:
