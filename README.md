@@ -41,7 +41,7 @@ my_hdr X-PGP-Key: [asc]         # optional
 set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
-### Encription
+### Encryption
 ```
 gpg -r [keyID] -e [filename]
 mv filename.gpg ~/.mutt/accounts/
