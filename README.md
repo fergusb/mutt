@@ -1,7 +1,7 @@
 mutt
 ====
 
-# Fergus' mutt config (Gmail)
+# Fergus' (neo)mutt config 
 
 ## Installation
 ```
@@ -28,9 +28,9 @@ killall -q gpg-agent
 eval $(gpg-agent --daemon)
 ```
 
-You also need to install goobook (with pip)
+If you're using Gmail, install goobook
 ```
-sudo pip install goobook
+pip install --user goobook
 ```
 
 " vim:ft=mkd
