@@ -1,0 +1,43 @@
+# -*-muttrc-*-
+# Last Modified: 2017-03-15 01:46:08 CET
+
+# Palette for use with 256-color console, black background.
+
+color normal      white       default
+color hdrdefault  default     default
+color signature   blue        default
+color attachment  color238    default
+color message     white       default
+color error       red         default
+color indicator   white       color234
+color status      default     blue
+color tree        blue        default
+color markers     red         default
+color search      default     default
+color tilde       magenta     default
+#color index       blue        default ~F
+color index       yellow      default "~N|~O"
+
+color body default  default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body default  default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body default  default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body brightgreen default "<[Ee]?[Bb]?[Gg]>"		# <g>
+color body brightgreen default "<[Bb][Gg]>"		# <bg>
+color body brightgreen default " [;:]-*[)>(<|]"		# :-) etc.
+color body white default '\*+[^*]+\*+'
+color body white default '_+[^_]+_+'
+
+color header color111 default "^Date:" 
+color header color111 default "^From:" 
+color header color111 default "^To:" 
+color header color111 default "^Subject:" 
+color header color111 default "^Reply-To:" 
+
+color quoted  color248 default 
+color quoted1 color244 default 
+color quoted2 color240 default
+
+# neomutt
+color progress white blue
+
+# vim: ft=muttrc

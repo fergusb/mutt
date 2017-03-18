@@ -1,0 +1,8 @@
+*.bak
+aliases
+cache/*
+certs
+passwd*
+*.gpg
+accounts/*.gpg
+tmp/*

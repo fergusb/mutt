@@ -1,0 +1,211 @@
+# Fergus' mutt settings
+# <fergus@fastmail.fm>
+# Last Modified: 2017-03-15 01:41:27 CET
+
+# defaults
+set realname = "Fergus Bremner"
+set mbox_type = Maildir
+set imap_idle = yes
+set imap_check_subscribed
+set mail_check = 120
+set imap_keepalive = 300
+set timeout = 30
+
+# accounts
+folder-hook imaps://fergus@fastmail.fm@mail.messagingengine.com:993 "source ~/.mutt/accounts/fastmail.profile"
+# folder-hook imaps://fergus.bremner@gmail.com@imap.gmail.com:993 "source ~/.mutt/accounts/gmail.profile"
+
+source ~/.mutt/accounts/fastmail.profile     # default account
+
+macro index,pager <esc>1 '<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>'
+# macro index,pager <esc>2 '<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>'
+
+# use vim
+set editor = "vim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
+# set editor = "vim +/^$ ++1 -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
+
+# SSL hardening
+set ssl_force_tls=yes
+set ssl_starttls=yes
+# set ssl_use_sslv2=no
+set ssl_use_sslv3=no
+set ssl_use_tlsv1=no
+set ssl_use_tlsv1_1=no
+set ssl_use_tlsv1_2=yes
+set ssl_verify_dates=yes
+set ssl_verify_host=yes
+
+# don't trust the system.
+# unset ssl_usesystemcerts
+set certificate_file=~/.mutt/certs
+
+# caching for speed - headers only
+set header_cache=~/.mail/cache/headers
+
+set use_from = yes          # allow editing of From:
+set use_envelope_from       # which From:
+set edit_headers = yes      # editable headers in compose
+set reverse_name            # let mutt use the To: address of a message as the From:
+# set reverse_realname = no
+set hidden_host             # hide host details
+set noallow_8bit            # 8bit isn't safe
+set abort_nosubject = ask-yes
+set auto_tag = yes
+set nobeep                  # we don't need no beeping software
+set delete = yes            # delete on exit
+set meta_key = yes          # allow to use alt or ESC
+set forward_quote           # include message in forwards
+set forward_decode          # decode when forwarding
+set fcc_attach              # save attachments with the body
+set menu_scroll             # scroll in menus 
+set pager_stop              # don't go to next message automatically
+set pipe_decode             # strip headers and eval mimes when piping
+set nostrict_threads        # fuzzy threading
+set nopipe_decode           # don't decode messages when piping
+set reply_to                # reply to Reply to: field
+set fast_reply              # skip initial prompts when replying
+set include                 # include message in replies
+set sendmail_wait = -1      # send mail in the background
+set sig_dashes              # double dash before signature
+set sig_on_top              # signature before reply
+set smart_wrap              # don't split words
+set text_flowed             # label messages as format-flowed
+set nosmart_wrap            # don't want smart wrapping.
+set nomarkers               # don't want any wrap markers
+set thorough_search         # strip headers and eval mimes before searching
+set noconfirmappend         # just append, don't hassle me
+set tilde                   # show tildes like in vim
+
+# Attachments
+set mime_forward = yes 
+set mime_forward_rest = yes
+
+set mailcap_path = ~/.mutt/mailcap
+
+# unset imap_passive          # open new imap connection automatically
+unset metoo
+unset reply_self
+unset wait_key              # only "press a key" if return value non-zero
+unset mark_old              # read/new is good enough 
+
+# sort like Gmail
+set sort = threads
+set sort_browser = reverse-date
+set sort_aux = reverse-last-date-received
+set sort_re
+set uncollapse_jump         # don't collapse on an unread message 
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Formating
+set alias_format = "%4n %2f %t %-12a  %r"
+set attach_format = "%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+set attribution = "On %{%A, %d %B %Y} at %{%H:%M}, %n wrote:\n"
+set compose_format = "-- %v-- Compose  [Approximate Message Size: %l   Attachments: %a]%>-"
+#set date_format = "!%a %b %d, %Y at %I:%M:%S%p %Z"
+#set date_format="%a, %d.%m.%y %H:%M"
+set date_format = "!%a, %d %b at %H:%M"
+set folder_format = "%3C %t%N %F %-8.8u %-8.8g %8s %d %f"
+set forward_format = "Fwd: [%a: %s]"
+# set index_format = "[%Z]  %D  %-20.20F  %s"
+# set index_format = "%3C [%Z] %{%b %d} %2M %-20.20F %s"
+# set index_format = "%3C [%Z] %D %-15.15F %M %s"
+# neomutt
+set index_format='%4C [%Z] %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15L (%?l?%4l&%4c?) %s'
+set message_format="%-.16n: %s"
+#set pager_format = " %S [%C/%T] %n (%l) %s" 
+set pager_format = "On %{%a, %d %b %Y} at [%[%H:%M]]: %s|~"
+set status_chars  = " *%A"
+set status_format = "[%r] %h %f [%?M?%M/?%m msgs%?n?, %n new?%?o?, %o old?%?d?, %d del?%?F?, %F flag?%?t?, %t tag?%?p?, %p postp?%?b?, %b inc?%?l?, %l?] (%s) %> %P "
+# set quote_regexp = "^ *[a-zA-Z]*[]>|}()%:=-][]>|}():=-]*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+ )+"
+set to_chars = " +TCF "                     # Drop the "L"
+
+#set xterm_set_titles
+#set xterm_title    = "mutt: %f%?n? N:%n&?%?b? B:%b?"
+#set xterm_title    = "`hostname`::mutt - %?m?%m messages&no messages?%?n? [%n NEW]?"
+
+# html mail handling
+# auto_view text/html
+
+# headers to go
+ignore *                                # ignore all headers
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Subject:
+unignore Date:
+unignore CC:
+unignore BCC:
+unhdr_order *                           # some distros order things by default
+hdr_order From: Return-Path: \
+Reply-To: \
+Date: Subject: Importance:
+
+# source dirs
+source ~/.mutt/colors
+source ~/.mutt/gpg.rc
+
+# aliases (addresses)
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+# when composing
+set tmpdir = ~/.mail/tmp
+
+# keybindings
+bind index gg         first-entry
+bind index G          last-entry
+bind index K          previous-unread
+bind index J          next-unread
+bind index \Cm        next-unread-mailbox
+
+bind pager i          exit
+bind pager q          toggle-quoted
+bind pager /          search
+bind pager <up>       previous-line
+bind pager <down>     next-line
+bind pager k          previous-line
+bind pager j          next-line
+bind pager gg         top
+bind pager G          bottom
+bind pager K          previous-undeleted
+bind pager J          next-undeleted
+
+bind index,pager \Cg  imap-fetch-mail
+bind index,pager R    group-reply
+
+bind editor <Tab>     complete-query
+bind editor <Tab>     complete-query
+bind editor ^T        complete
+bind editor <space>   noop
+ 
+# Ctl-A to mark all as read
+macro index \Ca "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# address book - abook
+#set query_command= "abook --mutt-query '%s'"
+#macro generic,index,pager ,ca "<shell-escape>abook<return>" "launch abook"
+#macro index,pager A "<pipe-message>abook --add-email<return>" "add sender to abook"
+
+# address book - FastMail
+set query_command = "pc_query -m '%s'"
+# set query_command = "fastmail-ldap.pl '%s'"
+macro index,pager a "<pipe-message>pycard-import<enter>" "add sender address to pycardsyncer"
+
+# address book - goobook
+# set query_command="goobook query '%s'"
+# macro index,pager a "<pipe-message>goobook add<return>" "add sender to Google contacts"
+
+# 'A' shows all messages again (supersedes default <alias> binding)
+macro index A "<limit>all\n" "show all messages (undo limit)"
+
+# neomutt additions (testing)
+# Compose a new email (not a reply) to the sender
+bind index,pager @ compose-to-sender
+
+# get mutt to display it's version on startup
+push V
+
+# vim: ft=muttrc

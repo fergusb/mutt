@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+CWD=$(pwd) 
+DATE=$(date +"%Y%m%d%H%M")
+
+# clear old symlink or backup old mutt dir, if it exists
+if [ -h $HOME/.mutt ] ; then
+  echo "Removing stale symlink ~/.mutt"
+  rm $HOME/.mutt
+elif [ "$CWD" != "$HOME/.mutt" ] ; then
+  if [ -d $HOME/.mutt ] ; then
+    echo "Backing up existing ~/.mutt to ~/.mutt-$DATE"
+    mv $HOME/.mutt $HOME/.mutt-$DATE
+  fi
+  echo "Creating ~/.mutt symlink to $CWD"
+  ln -s $CWD $HOME/.mutt
+fi
+
+if [ -d $HOME/.mail ] ; then
+  echo "Renaming existing mail dir to mail-$DATE"
+  mv $HOME/.mail $HOME/mail-$DATE
+fi
+
+# final flourish
+echo "Creating tmp and cache directories"
+touch $HOME/.mutt/certs
+mkdir -p $HOME/.mail/tmp
+mkdir -p $HOME/.mail/cache/headers
+chmod -R 0700 $HOME/.mail
+if [ ! -d $HOME/.passwd ]; then
+  mkdir $HOME/.passwd
+fi
+
+printf "All done!"
