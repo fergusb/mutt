@@ -29,6 +29,7 @@ mkdir -p $HOME/.mail/cache/headers
 chmod -R 0700 $HOME/.mail
 if [ ! -d $HOME/.passwd ]; then
   mkdir $HOME/.passwd
+  chmod 0700 $HOME/.passwd
 fi
 
 printf "All done!"
