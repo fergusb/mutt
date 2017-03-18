@@ -5,7 +5,7 @@ mutt
 
 ## Installation
 
-Instalation is 2-step:
+Instalation is 3-step:
 
 1. Run the installer
 2. Add encrypted account settings
@@ -18,16 +18,6 @@ The install script makes a timestamped backup of any existing mutt instances.
 ```
 cd ~/.mutt
 ./install
-```
-
-### Gmail
-
-Encrypt the following settings...
-```
-set imap_user="[email]"
-set imap_pass="[passwd]"
-set signature="[filename]"      # optional
-set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
 ### FastMail
@@ -45,10 +35,35 @@ my_hdr X-PGP-Key: [asc]         # optional
 set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
+### Gmail
+
+Encrypt the following settings...
+```
+set imap_user="[email]"
+set imap_pass="[passwd]"
+set signature="[filename]"      # optional
+set pgp_sign_as=0xXXXXXXXX      # optional
+```
+
+### Svaha
+
+Encrypt the following settings...
+```
+set from="[email]"
+set imap_user="[email]"
+set imap_pass="[passwd]"
+set signature="[filename]"      # optional
+unmy_hdr *                      # optional
+my_hdr X-URL: [your_domain]     # optional
+my_hdr X-PGP-Key: [asc]         # optional
+set pgp_sign_as=0xXXXXXXXX      # optional
+```
+
 ### Encryption
 
 Add account settings to a txt file named after the account, then encrypt, add to 
-the mutt accounts directory and source in the profile.
+the mutt accounts directory and source in the profile. Delete the unencrypted 
+txt settings file.
 
 ```
 gpg -r [keyID] -e [filename]
