@@ -6,8 +6,7 @@ mutt
 ## Installation
 ```
 cd ~/.mutt
-mkdir -p tmp cache/{body,header}
-touch certs passwd
+./install
 ```
 
 Add the following to passwd:

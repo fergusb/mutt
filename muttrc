@@ -1,6 +1,8 @@
 # Fergus' mutt settings
-# <fergus@fastmail.fm>
-# Last Modified: 2017-03-15 01:41:27 CET
+# Last Modified: 2017-03-18 01:44:13 CET
+
+# load account settings
+source "gpg --no-tty -qd ~/.mutt/accounts/fastmail.gpg |"
 
 # defaults
 set realname = "Fergus Bremner"
@@ -12,7 +14,7 @@ set imap_keepalive = 300
 set timeout = 30
 
 # accounts
-folder-hook imaps://fergus@fastmail.fm@mail.messagingengine.com:993 "source ~/.mutt/accounts/fastmail.profile"
+folder-hook imaps://fergus@fastmail.fm@mail.messagingengine.com:993 "source ~/.mutt/accounts/fastmail.conf"
 # folder-hook imaps://fergus.bremner@gmail.com@imap.gmail.com:993 "source ~/.mutt/accounts/gmail.profile"
 
 source ~/.mutt/accounts/fastmail.profile     # default account
