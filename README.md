@@ -6,13 +6,23 @@ mutt
 ## Installation
 ```
 cd ~/.mutt
+vim foo
 ./install
 ```
 
-Add the following to passwd:
+Add the following to foo:
 ```
+set from="[gpg]"
 set imap_pass="[your_password]"
 set smtp_pass="[your_password]"
+set imap_user="[passwd]"
+set imap_pass="[passwd]"
+alternates "[address|address]"  # optional
+set signature=[txt_file]        # optional
+unmy_hdr *                      # optional
+my_hdr X-URL: [your_domain]     # optional
+my_hdr X-PGP-Key: [asc]         # optional
+set pgp_sign_as=0xXXXXXXXX      # optional
 ```
 
 ```
