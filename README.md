@@ -24,10 +24,11 @@ cd ~/.mutt
 
 Encrypt the following settings...
 ```
+set realname = "[Your Name]"
 set from="[email]"
 set imap_user="[email]"
 set imap_pass="[passwd]"
-alternates "[address|address]"  # optional
+alternates "[email|email]"      # optional - pipe delimited
 set signature="[filename]"      # optional
 unmy_hdr *                      # optional
 my_hdr X-URL: [your_domain]     # optional
@@ -39,6 +40,7 @@ set pgp_sign_as=0xXXXXXXXX      # optional
 
 Encrypt the following settings...
 ```
+set realname = "[Your Name]"
 set imap_user="[email]"
 set imap_pass="[passwd]"
 set signature="[filename]"      # optional
@@ -49,6 +51,7 @@ set pgp_sign_as=0xXXXXXXXX      # optional
 
 Encrypt the following settings...
 ```
+set realname = "[Your Name]"
 set from="[email]"
 set imap_user="[email]"
 set imap_pass="[passwd]"
@@ -76,6 +79,10 @@ If gpg-agent misbehaves try:
 killall -q gpg-agent
 eval $(gpg-agent --daemon)
 ```
+
+## Editor
+
+Note that the editor is set to use NeoVim: https://neovim.io
 
 ## Addressbook
 

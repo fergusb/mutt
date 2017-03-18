@@ -1,8 +1,7 @@
 # Fergus' mutt settings
-# Last Modified: 2017-03-18 01:05:33 CET
+# Last Modified: 2017-03-18 01:11:18 CET
 
 # set defaults
-set realname = "Fergus Bremner"
 set mbox_type = Maildir
 set imap_idle = yes
 set imap_check_subscribed
@@ -15,9 +14,9 @@ source ~/.mutt/accounts/fastmail.profile     # default account
 macro index,pager <f2> "<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>"
 macro index,pager <f3> "<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>"
 
-# use vim
+# use neovim
 set editor = "nvim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
-# set editor = "vim +/^$ ++1 -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
+# set editor = "nvim +/^$ ++1 -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
 
 # SSL hardening
 set ssl_force_tls=yes
