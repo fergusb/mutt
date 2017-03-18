@@ -1,11 +1,11 @@
 (neo)mutt
 ====
 
-# Fergus' (neo)mutt config 
+# Fergus' mail config 
 
 ## Installation
 
-Instalation is 3-step:
+Installation is 3-step:
 
 1. Run the installer
 2. Add encrypted account settings
