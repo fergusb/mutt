@@ -1,5 +1,5 @@
 # Fergus' neomutt settings
-# Last Modified: 2017-03-18 01:38:12 CET
+# Last Modified: 2017-03-18 01:47:03 CET
 
 # set account defaults
 source ~/.mutt/accounts/fastmail.profile     # default account
@@ -151,6 +151,7 @@ bind pager G          bottom
 bind pager K          previous-undeleted
 bind pager J          next-undeleted
 
+bind index,pager @    compose-to-sender
 bind index,pager \Cg  imap-fetch-mail
 bind index,pager R    group-reply
 
@@ -169,17 +170,14 @@ macro index \Ca "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 
 # address book - pycarddav
 set query_command = "pc_query -m '%s'"
-macro index,pager a "<pipe-message>pycard-import<enter>" "add sender to addressbook"
+macro index,pager a "<pipe-message>pycard-import<enter>" "add sender to address book"
 
 # address book - goobook
 # set query_command = "goobook query '%s'"
-# macro index,pager a "<pipe-message>goobook add<return>" "add sender to Google contacts"
+# macro index,pager a "<pipe-message>goobook add<return>" "add sender to Gmail contacts"
 
 # 'A' shows all messages again (supersedes default <alias> binding)
 macro index A "<limit>all\n" "show all messages (undo limit)"
-
-# Compose a new email (not a reply) to the sender
-bind index,pager @ compose-to-sender
 
 # get mutt to display it's version on startup
 push V
