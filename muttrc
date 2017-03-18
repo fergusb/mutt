@@ -1,5 +1,5 @@
 # Fergus' mutt settings
-# Last Modified: 2017-03-18 12:36:30 CET
+# Last Modified: 2017-03-18 01:05:33 CET
 
 # set defaults
 set realname = "Fergus Bremner"
@@ -10,14 +10,10 @@ set mail_check = 120
 set imap_keepalive = 300
 set timeout = 30
 
-# set accounts
-folder-hook imaps://fergus@fastmail.fm@mail.messagingengine.com:993 "source ~/.mutt/accounts/fastmail.profile"
-folder-hook imaps://fergus.bremner@gmail.com@imap.gmail.com:993 "source ~/.mutt/accounts/gmail.profile"
-
 source ~/.mutt/accounts/fastmail.profile     # default account
 
-macro index,pager <esc>1 '<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>'
-macro index,pager <esc>2 '<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>'
+macro index,pager <f2> "<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>"
+macro index,pager <f3> "<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>"
 
 # use vim
 set editor = "nvim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
