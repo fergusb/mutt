@@ -1,18 +1,17 @@
-# Fergus' mutt settings
-# Last Modified: 2017-03-18 01:26:05 CET
+# Fergus' neomutt settings
+# Last Modified: 2017-03-18 01:38:12 CET
 
-# set defaults
+# set account defaults
+source ~/.mutt/accounts/fastmail.profile     # default account
+macro index,pager <f2> "<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>"
+macro index,pager <f3> "<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>"
+
 set mbox_type = Maildir
 set imap_idle = yes
 set imap_check_subscribed
 set mail_check = 120
 set imap_keepalive = 300
 set timeout = 30
-
-source ~/.mutt/accounts/fastmail.profile     # default account
-
-macro index,pager <f2> "<sync-mailbox><enter-command>source ~/.mutt/accounts/fastmail.profile<enter><change-folder>!<enter>"
-macro index,pager <f3> "<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail.profile<enter><change-folder>!<enter>"
 
 # use neovim
 set editor = "nvim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
