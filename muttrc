@@ -13,9 +13,9 @@ set mail_check = 120
 set imap_keepalive = 300
 set timeout = 30
 
-# use neovim
-set editor = "nvim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
-# set editor = "nvim +/^$ ++1 -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
+# use (neo)vim
+set editor = "vim +/^$ -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
+# set editor = "vim +/^$ ++1 -c 'set ft=mail enc=utf-8 et nobk nosi nowb noswapfile'"
 
 # SSL hardening
 set ssl_force_tls = yes
